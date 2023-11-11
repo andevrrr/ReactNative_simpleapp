@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 21,
+    padding: 20,
     backgroundColor: '#fff',
   },
   input: {
