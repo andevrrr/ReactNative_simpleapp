@@ -6,7 +6,7 @@ const App = () => {
   const [convertedAmount, setConvertedAmount] = useState(null);
 
   const convertCurrency = () => {
-    const rate = 1.1; 
+    const rate = 1.1; // for example the rate is 1.1
     setConvertedAmount((amount * rate).toFixed(2) + ' USD');
   };
 
@@ -19,7 +19,7 @@ const App = () => {
         value={amount}
         onChangeText={setAmount}
       />
-      <Button title="Convert to USD" onPress={convertCurrency} />
+      <Button title=" Convert to USD " onPress={convertCurrency} />
       <Text style={styles.result}>
         {convertedAmount ? `Converted Amount: ${convertedAmount}` : ''}
       </Text>
