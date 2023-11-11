@@ -6,7 +6,7 @@ const App = () => {
   const [convertedAmount, setConvertedAmount] = useState(null);
 
   const convertCurrency = () => {
-    const rate = 1.1; // for example the rate is 1.1
+    const rate = 1.1; 
     setConvertedAmount((amount * rate).toFixed(2) + ' USD');
   };
 
