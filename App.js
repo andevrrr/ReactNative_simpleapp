@@ -21,7 +21,7 @@ const App = () => {
       />
       <Button title=" Convert to USD " onPress={convertCurrency} />
       <Text style={styles.result}>
-        {convertedAmount ? `Converted Amount: ${convertedAmount}` : ''}
+        {convertedAmount ? ` Converted Amount: ${convertedAmount} ` : ''}
       </Text>
     </View>
   );
