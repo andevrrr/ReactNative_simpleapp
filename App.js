@@ -1,20 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, TextInput, Button, Text } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const [amount, setAmount] = useState('');
+  const [convertedAmount, setConvertedAmount] = useState(null);
+
+  const convertCurrency = () => {
+    const rate = 1.1; // for example the rate is 1.1
+    setConvertedAmount((amount * rate).toFixed(2) + ' USD');
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <TextInput
+        style={styles.input}
+        keyboardType="numeric"
+        placeholder="Enter amount in EUR"
+        value={amount}
+        onChangeText={setAmount}
+      />
+      <Button title="Convert to USD" onPress={convertCurrency} />
+      <Text style={styles.result}>
+        {convertedAmount ? `Converted Amount: ${convertedAmount}` : ''}
+      </Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 21,
+    backgroundColor: '#fff',
+  },
+  input: {
+    width: '100%',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#000',
+    marginBottom: 20,
+    borderRadius: 5,
+  },
+  result: {
+    marginTop: 20,
+    fontSize: 18,
+    color: 'green',
   },
 });
+
+export default App;
